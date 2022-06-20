@@ -1,0 +1,11 @@
+{
+  "name": "support-ticket-system",
+  "version": "1.0.0",
+  "description": "support ticket app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "author": "eworld",
+  "license": "MIT"
+}
