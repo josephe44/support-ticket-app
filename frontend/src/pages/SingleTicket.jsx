@@ -4,7 +4,11 @@ import Modal from 'react-modal'
 import { FaPlus } from 'react-icons/fa'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getTicket, closeTicket } from '../features/tickets/ticketSlice'
-import { getNotes, reset as notesRest } from '../features/notes/noteSlice'
+import {
+  getNotes,
+  createNote,
+  reset as notesRest,
+} from '../features/notes/noteSlice'
 import BackButton from '../components/atoms/BackButton'
 import NoteItem from '../components/organisms/NoteItem'
 import Spinner from '../components/atoms/Spinner'
@@ -62,7 +66,7 @@ function SingleTicket() {
   // create note and submit
   const onNoteSubmit = (e) => {
     e.preventDefault()
-    console.log(noteText)
+    dispatch(createNote({ noteText, ticketId }))
     closeModal()
   }
 
